@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "0007dcc6-26ce-42f4-8562-de909d7362f4",
+		"name": "Roles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10997680"
+	},
+	"item": [
+		{
+			"name": "Add employee role",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"id\": 1,",
+							"            \"name\": \"employee\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"employee\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/roles",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add manager role",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"id\": 2,",
+							"            \"name\": \"manager\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"manager\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/roles",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add general_manager role",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property(\"data\")",
+							"})",
+							"",
+							"pm.test(\"Body should match\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"id\": 3,",
+							"            \"name\": \"general_manager\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"general_manager\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/roles",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Add employee role",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"errors\": {",
+							"            \"msg\": \"Constraint foreign key error.\",",
+							"            \"status\" : 404",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"employee\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/roles",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get employee role",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property(\"data\")",
+							"})",
+							"",
+							"pm.test(\"Body should match\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"id\": 1,",
+							"            \"name\": \"employee\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/roles/1",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"roles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get manager role",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property(\"data\")",
+							"})",
+							"",
+							"pm.test(\"Body should match\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"id\": 2,",
+							"            \"name\": \"manager\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/roles/2",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"roles",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get general_manager role",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property(\"data\")",
+							"})",
+							"",
+							"pm.test(\"Body should match\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"id\": 3,",
+							"            \"name\": \"general_manager\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/roles/3",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"roles",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get role with ID 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property(\"errors\")",
+							"})",
+							"",
+							"pm.test(\"Body should match\", () => {",
+							"    const expectedObject = {",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/roles/4",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"roles",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

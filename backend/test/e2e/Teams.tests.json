@@ -1,0 +1,645 @@
+{
+	"info": {
+		"_postman_id": "8ac72a9b-b880-4fa5-bb69-2a8804601468",
+		"name": "Teams",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10997680"
+	},
+	"item": [
+		{
+			"name": "Create team \"first_team\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"id\": 1,",
+							"            \"name\": \"first_team\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"first_team\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create team \"second_team\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"id\": 2,",
+							"            \"name\": \"second_team\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"second_team\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create team \"third_team\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"id\": 3,",
+							"            \"name\": \"third_team\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"third_team\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Create team \"first_team\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"errors\": {",
+							"            \"msg\": \"Constraint foreign key error.\",",
+							"            \"status\": 404",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"first_team\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams/",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all teams",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should contain an array\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.be.an(\"array\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0]).to.have.property(\"id\")",
+							"    pm.expect(response.data[0]).to.have.property(\"name\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get team with ID 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.have.property(\"id\")",
+							"    pm.expect(response.data).to.have.property(\"name\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams/1",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] get team with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update team \"second team\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.have.property(\"id\")",
+							"    pm.expect(response.data).to.have.property(\"name\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"team_second\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams/2",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Update team with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"team_1000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Update team \"third_team\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 422\", () => {",
+							"    pm.response.to.have.status(422);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"Attribute in request body is unmatched.\",",
+							"            \"status\": 422",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"namename\": \"team_3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams/3",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete team \"first_team\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.have.property(\"detail\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams/1",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Delete team with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/teams/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"teams",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

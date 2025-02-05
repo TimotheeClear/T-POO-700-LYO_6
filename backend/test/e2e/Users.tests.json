@@ -1,0 +1,1033 @@
+{
+	"info": {
+		"_postman_id": "8ab795c6-f2d4-4667-a1fb-b223fc0dc6fb",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10997680"
+	},
+	"item": [
+		{
+			"name": "Create new user Tim",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"email\": \"tim@mail.com\",",
+							"            \"id\": 1,",
+							"            \"password\": \"okayouais\",",
+							"            \"role_id\": 1,",
+							"            \"username\": \"tim\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"tim\",\n    \"email\": \"tim@mail.com\",\n    \"password\": \"okayouais\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new user Xiaoyan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"email\": \"xiaoyan@mail.com\",",
+							"            \"id\": 2,",
+							"            \"password\": \"xiaoyanxiaoyan\",",
+							"            \"role_id\": 1,",
+							"            \"username\": \"xiaoyan\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"xiaoyan\",\n    \"email\": \"xiaoyan@mail.com\",\n    \"password\": \"xiaoyanxiaoyan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new user Aziz",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"email\": \"aziz@mail.com\",",
+							"            \"id\": 3,",
+							"            \"password\": \"azizaziz\",",
+							"            \"role_id\": 1,",
+							"            \"username\": \"aziz\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"aziz\",\n    \"email\": \"aziz@mail.com\",\n    \"password\": \"azizaziz\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new user Romain",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"data\": {",
+							"            \"email\": \"romain@mail.com\",",
+							"            \"id\": 4,",
+							"            \"password\": \"romainromain\",",
+							"            \"role_id\": 1,",
+							"            \"username\": \"romain\"",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"romain\",\n    \"email\": \"romain@mail.com\",\n    \"password\": \"romainromain\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Create new user Romain",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"errors\": {",
+							"            \"msg\": \"Constraint foreign key error.\",",
+							"            \"status\": 404",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"romain\",\n    \"email\": \"romain@mail.com\",\n    \"password\": \"romainromain\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should contain an array\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.be.an(\"array\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0]).to.have.property(\"email\")",
+							"    pm.expect(response.data[0]).to.have.property(\"id\")",
+							"    pm.expect(response.data[0]).to.have.property(\"password\")",
+							"    pm.expect(response.data[0]).to.have.property(\"role_id\")",
+							"    pm.expect(response.data[0]).to.have.property(\"username\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user Tim",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.have.property(\"email\")",
+							"    pm.expect(response.data).to.have.property(\"id\")",
+							"    pm.expect(response.data).to.have.property(\"password\")",
+							"    pm.expect(response.data).to.have.property(\"role_id\")",
+							"    pm.expect(response.data).to.have.property(\"username\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/1",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user Aziz",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.have.property(\"email\")",
+							"    pm.expect(response.data).to.have.property(\"id\")",
+							"    pm.expect(response.data).to.have.property(\"role_id\")",
+							"    pm.expect(response.data).to.have.property(\"username\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/3",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get user with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include(",
+							"        {",
+							"            \"errors\": {",
+							"                \"msg\": \"No corresponding result found in database.\",",
+							"                \"status\": 404",
+							"            }",
+							"        }",
+							"    )",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by roleID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should contain an array\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.be.an(\"array\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0]).to.have.property(\"email\")",
+							"    pm.expect(response.data[0]).to.have.property(\"id\")",
+							"    pm.expect(response.data[0]).to.have.property(\"role_id\")",
+							"    pm.expect(response.data[0]).to.have.property(\"username\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/roles/1",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"roles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get user with roleID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include(",
+							"        {",
+							"            \"errors\": {",
+							"                \"msg\": \"No corresponding result found in database.\",",
+							"                \"status\": 404",
+							"            }",
+							"        }",
+							"    )",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/roles/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"roles",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user Tim",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include(",
+							"        {",
+							"            \"data\": {",
+							"                \"email\": \"timothée@mail.com\",",
+							"                \"id\": 1,",
+							"                \"role_id\": 1,",
+							"                \"username\": \"timothée\"",
+							"            }",
+							"        }",
+							"    )",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"timothée\",\n    \"password\": \"timothéetimothée\",\n    \"email\": \"timothée@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/1",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Update user Aziz",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 422\", () => {",
+							"    pm.response.to.have.status(422);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include(",
+							"        {",
+							"            \"errors\": {",
+							"                \"msg\": \"User should provide a password.\",",
+							"                \"status\": 422",
+							"            }",
+							"        }",
+							"    )",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"aziz\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/3",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Update user with bad properties",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 422\", () => {",
+							"    pm.response.to.have.status(422);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include(",
+							"        {",
+							"            \"errors\": {",
+							"                \"msg\": \"Attribute in request body is unmatched.\",",
+							"                \"status\": 422",
+							"            }",
+							"        }",
+							"    )",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"timothée\",\n    \"passwordpassword\": \"timothéetimothée\",\n    \"email\": \"timothée@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/1",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Update user with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include(",
+							"        {",
+							"            \"errors\": {",
+							"                \"msg\": \"No corresponding result found in database.\",",
+							"                \"status\": 404",
+							"            }",
+							"        }",
+							"    )",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"timothée\",\n    \"password\": \"timothéetimothée\",\n    \"email\": \"timothée@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user Tim",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.have.property(\"detail\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/1",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Delete user with ID 1000",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Create new user Geraint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 422\", () => {",
+							"    pm.response.to.have.status(422);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"errors\": {",
+							"            \"msg\": \"User should provide a password.\",",
+							"            \"status\": 422",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"geraint@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new user Tim",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.have.property(\"username\")",
+							"    pm.expect(response.data).to.have.property(\"email\")",
+							"    pm.expect(response.data).to.have.property(\"id\")",
+							"})",
+							"",
+							"pm.test(\"User id should be higher than 1\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data.id > 1)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"tim\",\n    \"email\": \"tim@mail.com\",\n    \"password\": \"okayouais\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

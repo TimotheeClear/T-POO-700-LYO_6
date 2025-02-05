@@ -1,0 +1,460 @@
+{
+	"info": {
+		"_postman_id": "62704211-6238-4c65-8186-41331a0eb9d6",
+		"name": "Clocks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10997680"
+	},
+	"item": [
+		{
+			"name": "Insert clock for user Xiaoyan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.have.property(\"id\")",
+							"    pm.expect(response.data).to.have.property(\"status\")",
+							"    pm.expect(response.data).to.have.property(\"time\")",
+							"    pm.expect(response.data).to.have.property(\"user_id\")",
+							"})",
+							"",
+							"pm.test(\"Body should have following types\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data.user_id).to.be.a(\"number\");",
+							"    pm.expect(response.data.id).to.be.a(\"number\")",
+							"    pm.expect(response.data.time).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$/)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/clocks/2",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clocks",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Insert clock for user with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/clocks/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clocks",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get clocks for user Xiaoyan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should contain an array\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.be.an(\"array\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0]).to.have.property(\"id\")",
+							"    pm.expect(response.data[0]).to.have.property(\"status\")",
+							"    pm.expect(response.data[0]).to.have.property(\"time\")",
+							"    pm.expect(response.data[0]).to.have.property(\"user_id\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific types\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0].id).to.be.a(\"number\")",
+							"    pm.expect(response.data[0].status).to.be.a(\"boolean\")",
+							"    pm.expect(response.data[0]).to.have.property(\"user_id\")",
+							"    pm.expect(response.data[0].time).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$/)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/clocks/2",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clocks",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get clocks for user with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Response should match\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/clocks/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clocks",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get last clock for user Xiaoyan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Response should have specific types\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data.id).to.be.a(\"number\")",
+							"    pm.expect(response.data.status).to.be.a(\"boolean\")",
+							"    pm.expect(response.data.user_id).to.be.a(\"number\")",
+							"    pm.expect(response.data.time).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$/)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/clocks/last/2",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clocks",
+						"last",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get last clock for user with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Response should match\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/clocks/last/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clocks",
+						"last",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get clocks for user Xiaoyan with span",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should contain an array\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.be.an(\"array\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0]).to.have.property(\"id\")",
+							"    pm.expect(response.data[0]).to.have.property(\"status\")",
+							"    pm.expect(response.data[0]).to.have.property(\"time\")",
+							"    pm.expect(response.data[0]).to.have.property(\"user_id\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific types\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0].id).to.be.a(\"number\")",
+							"    pm.expect(response.data[0].status).to.be.a(\"boolean\")",
+							"    pm.expect(response.data[0]).to.have.property(\"user_id\")",
+							"    pm.expect(response.data[0].time).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$/)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/clocks/span/2?start=2022-11-03 00:00:00&end=2023-11-11 00:00:00",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clocks",
+						"span",
+						"2"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2022-11-03 00:00:00"
+						},
+						{
+							"key": "end",
+							"value": "2023-11-11 00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get clocks for user Xiaoyan with span",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 422\", () => {",
+							"    pm.response.to.have.status(422);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Response should match\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"Invalid datetime format.\",",
+							"            \"status\": 422",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/clocks/span/2?start=start&end=end",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clocks",
+						"span",
+						"2"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "start"
+						},
+						{
+							"key": "end",
+							"value": "end"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

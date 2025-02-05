@@ -1,0 +1,6 @@
+*.idea/
+*.DS_Store
+*.vscode/
+# Secrets
+*.env
+frontend/.env

@@ -1,0 +1,950 @@
+{
+	"info": {
+		"_postman_id": "371e94c2-c518-4a41-9c00-fe62e453a65e",
+		"name": "Workingtimes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10997680"
+	},
+	"item": [
+		{
+			"name": "Add Workingtime for user Xiaoyan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.have.property(\"id\")",
+							"    pm.expect(response).to.have.property(\"start\")",
+							"    pm.expect(response).to.have.property(\"end\")",
+							"    pm.expect(response).to.have.property(\"user_id\")",
+							"})",
+							"",
+							"pm.test(\"Body should have specific types\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.id).to.be.a(\"number\")",
+							"    pm.expect(response.user_id).to.be.a(\"number\")",
+							"    pm.expect(response.id).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$/)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"start\": \"2020-10-02 14:20:19\",\n    \"end\": \"2020-10-02 17:30:29\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/2",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Workingtime for user Romain",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.have.property(\"id\")",
+							"    pm.expect(response).to.have.property(\"start\")",
+							"    pm.expect(response).to.have.property(\"end\")",
+							"    pm.expect(response).to.have.property(\"user_id\")",
+							"})",
+							"",
+							"pm.test(\"Body should have specific types\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.id).to.be.a(\"number\")",
+							"    pm.expect(response.user_id).to.be.a(\"number\")",
+							"    pm.expect(response.id).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$/)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"start\": \"2020-10-02 14:20:19\",\n    \"end\": \"2021-10-02 17:30:29\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/4",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Workingtime for user Aziz",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.have.property(\"id\")",
+							"    pm.expect(response).to.have.property(\"start\")",
+							"    pm.expect(response).to.have.property(\"end\")",
+							"    pm.expect(response).to.have.property(\"user_id\")",
+							"})",
+							"",
+							"pm.test(\"Body should have specific types\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.id).to.be.a(\"number\")",
+							"    pm.expect(response.user_id).to.be.a(\"number\")",
+							"    pm.expect(response.id).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$/)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"start\": \"2022-10-02 14:20:19\",\n    \"end\": \"2022-10-10 17:30:29\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/3",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Add Workingtime for user Romain",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 400\", () => {",
+							"    pm.response.to.have.status(400);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"errors\": {",
+							"            \"msg\": \"Start time cannot be inferior to end time.\",",
+							"            \"status\": 400",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"start\": \"2022-10-02 14:20:19\",\n    \"end\": \"2021-10-02 17:30:29\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/4",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Add Workingtime for user with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"errors\": {",
+							"            \"msg\": \"Constraint foreign key error.\",",
+							"            \"status\": 400",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"start\": \"2021-11-02 14:20:19\",\n    \"end\": \"2021-12-10 17:30:29\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get Workingtime by userID and workingtimeID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const expectedObject = {",
+							"        \"errors\": {",
+							"            \"detail\": \"Not Found\",",
+							"        }",
+							"    }",
+							"    pm.expect(pm.response.json()).to.deep.include(expectedObject)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/343/134",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"343",
+						"134"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Workingtime by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.have.property(\"detail\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/1",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Delete workingtime with ID 100000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include(",
+							"        {",
+							"            \"errors\": {",
+							"                \"msg\": \"No corresponding result found in database.\",",
+							"                \"status\": 404",
+							"            }",
+							"        }",
+							"    )",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/100000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"100000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one workingtime for user Romain",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.have.property(\"id\")",
+							"    pm.expect(response.data).to.have.property(\"start\")",
+							"    pm.expect(response.data).to.have.property(\"end\")",
+							"    pm.expect(response.data).to.have.property(\"user_id\")",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data.id).to.be.a(\"number\")",
+							"    pm.expect(response.data.user_id).to.be.a(\"number\")",
+							"    pm.expect(response.data.start).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}/)",
+							"    pm.expect(response.data.end).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}/)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/7/users/4",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"7",
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get one workingtime with ID 100000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/100000/users/4",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"100000",
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get one workingtime for user with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/7/users/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"7",
+						"users",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get workingtimes by userID py period",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/1?start=\"2021-01-01 00:00:00\"&end=\"2022-12-31 00:00:00\"",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"1"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "\"2021-01-01 00:00:00\""
+						},
+						{
+							"key": "end",
+							"value": "\"2022-12-31 00:00:00\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all workingtimes for user Xiaoyan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should contain an array\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.be.an(\"array\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0]).to.have.property(\"id\")",
+							"    pm.expect(response.data[0]).to.have.property(\"start\")",
+							"    pm.expect(response.data[0]).to.have.property(\"end\")",
+							"    pm.expect(response.data[0]).to.have.property(\"user_id\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific types\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0].id).to.be.a(\"number\")",
+							"    pm.expect(response.data[0].user_id).to.be.a(\"number\")",
+							"    pm.expect(response.data[0]).to.have.property(\"user_id\")",
+							"    pm.expect(response.data[0].start).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}/)",
+							"    pm.expect(response.data[0].end).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}/)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/all/4",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"all",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get all workingtimes for user with ID 1000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/all/1000",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"all",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all workingtimes for user Romain on period",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should contain an array\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data).to.be.an(\"array\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific properties\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0]).to.have.property(\"id\")",
+							"    pm.expect(response.data[0]).to.have.property(\"start\")",
+							"    pm.expect(response.data[0]).to.have.property(\"end\")",
+							"    pm.expect(response.data[0]).to.have.property(\"user_id\")",
+							"})",
+							"",
+							"pm.test(\"Elements in array should contain specific types\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response.data[0].id).to.be.a(\"number\")",
+							"    pm.expect(response.data[0].user_id).to.be.a(\"number\")",
+							"    pm.expect(response.data[0]).to.have.property(\"user_id\")",
+							"    pm.expect(response.data[0].start).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}/)",
+							"    pm.expect(response.data[0].end).to.match(/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}/)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/4?start=2020-11-03 00:00:00&end=2023-11-11 00:00:00",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"4"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2020-11-03 00:00:00"
+						},
+						{
+							"key": "end",
+							"value": "2023-11-11 00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get all workingtimes for user with ID 1000 on period",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 404\", () => {",
+							"    pm.response.to.have.status(404);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Body should have data property\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"No corresponding result found in database.\",",
+							"            \"status\": 404",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/1000?start=2020-11-03 00:00:00&end=2023-11-11 00:00:00",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"1000"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2020-11-03 00:00:00"
+						},
+						{
+							"key": "end",
+							"value": "2023-11-11 00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[FAIL] Get all workingtimes for user Romain with wrong URL query params",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status should be 422\", () => {",
+							"    pm.response.to.have.status(422);",
+							"})",
+							"",
+							"pm.test(\"Body should be JSON format and have a body\", () => {",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"})",
+							"",
+							"pm.test(\"Response should match\", () => {",
+							"    const response = pm.response.json()",
+							"    pm.expect(response).to.deep.include({",
+							"        \"errors\": {",
+							"            \"msg\": \"Invalid datetime format.\",",
+							"            \"status\": 422",
+							"        }",
+							"    })",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:4000/api/workingtimes/4?start=start&end=end",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"workingtimes",
+						"4"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "start"
+						},
+						{
+							"key": "end",
+							"value": "end"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
